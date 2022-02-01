@@ -13,9 +13,9 @@ class AppBarTitle extends StatelessWidget {
       children: [
         FaIcon(
           FontAwesomeIcons.seedling,
-          color: ConfigController().primaryLoginButtonColor,
+          color: Colors.teal[600],
         ),
-         Text('GreenThumbs'),
+
       ],
     );
   }

@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:local_notification_awesome/lib/splash/cubit/splash_state.dart';
+import 'package:local_notification_awesome/lib/pages/splash/cubit/splash_state.dart';
 
 class SplashCubit extends Cubit<SplashState>{
   SplashCubit() : super(LoadingState());

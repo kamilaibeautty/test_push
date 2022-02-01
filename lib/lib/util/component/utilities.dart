@@ -34,8 +34,8 @@ Future<NotificationWeekAndTime?> pickSchedule(
       context: context,
       builder: (context) {
         return AlertDialog(
-          title: Text(
-            'I want to be reminded every:',
+          title: const Text(
+            'Me lembre em:',
             textAlign: TextAlign.center,
           ),
           content: Wrap(

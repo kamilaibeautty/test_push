@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:local_notification_awesome/lib/app/app_module.dart';
-import 'package:local_notification_awesome/lib/util/external/firebase_config.dart';
+import 'package:local_notification_awesome/lib/util/firebase/external/firebase_config.dart';
 
 import 'lib/app/app_widget.dart';
 

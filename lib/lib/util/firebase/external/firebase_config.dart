@@ -11,21 +11,17 @@ Future<void> onBackgroundMessage(RemoteMessage message) async {
   await Firebase.initializeApp();
 
   if (message.data.containsKey('data')) {
-    // Handle data message
     final data = message.data['data'];
   }
-
   if (message.data.containsKey('notification')) {
-    // Handle notification message
     final notification = message.data['notification'];
   }
-  // Or do other work.
 }
 
 class FCM{
   final _firebaseMessaging = FirebaseMessaging.instance;
 
-  String streamCtlr = "";
+  var streamCtlr;
   String titleCtlr = "";
   String bodyCtlr = "";
 
@@ -34,16 +30,14 @@ class FCM{
     FirebaseMessaging.onMessage.listen(
           (message) async {
         if (message.data.containsKey('data')) {
-          // Handle data message
-          streamCtlr = message.data['data'].toString();
+          streamCtlr = message.data['data'];
         }
         if (message.data.containsKey('notification')) {
-          // Handle notification message
           streamCtlr = message.data['notification'];
         }
-        // Or do other work.
         titleCtlr = message.notification!.title!;
         bodyCtlr + message.notification!.body!;
+
         AwesomeNotifications().createNotification(
           content: NotificationContent(
             id: createUniqueId(),
@@ -57,13 +51,11 @@ class FCM{
         );
       },
     );
-    // With this token you can test it easily on your phone
+    // Ajuda no teste de notificação
     final token = _firebaseMessaging.getToken().then((value) => log('Token: $value'));
 
   }
   dispose() {
-    // streamCtlr.close();
-    // bodyCtlr.close();
-    // titleCtlr.close();
+     streamCtlr.close();
   }
 }

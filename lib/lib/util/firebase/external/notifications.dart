@@ -8,9 +8,9 @@ Future<void> createPlantFoodNotification(BuildContext context) async {
     content: NotificationContent(
       id: createUniqueId(),
       channelKey: 'basic_channel',
-      title:
+      title: "Water"
       '${Emojis.money_money_bag + Emojis.plant_cactus} ',
-      body: "jewhfsdkh",
+      body: "Está na hora de regar suas plantas",
       bigPicture: 'asset://assets/app_icon.png',
       notificationLayout: NotificationLayout.BigPicture,
     ),

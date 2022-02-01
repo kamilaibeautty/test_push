@@ -9,6 +9,7 @@ class PlantStatsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
+        backgroundColor: Colors.teal[400],
         title: AppBarTitle(),
       ),
       body: Center(
@@ -18,7 +19,7 @@ class PlantStatsPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'Your Plant Stats',
+                'Status da Planta',
                 style: Theme.of(context).textTheme.headline4,
               ),
               SizedBox(

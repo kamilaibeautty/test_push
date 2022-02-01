@@ -3,15 +3,16 @@ import 'dart:io';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:local_notification_awesome/lib/home/cubit/home_cubit.dart';
-import 'package:local_notification_awesome/lib/home/cubit/home_state.dart';
-import 'package:local_notification_awesome/lib/home/home_component.dart';
+
+import 'package:local_notification_awesome/lib/pages/home/cubit/home_cubit.dart';
+import 'package:local_notification_awesome/lib/pages/home/cubit/home_state.dart';
+import 'package:local_notification_awesome/lib/pages/home/home_component.dart';
 import 'package:local_notification_awesome/lib/plant_stats_page.dart';
 import 'package:local_notification_awesome/lib/util/component/utilities.dart';
 import 'package:local_notification_awesome/lib/util/component/widgets.dart';
-import 'package:local_notification_awesome/lib/util/external/firebase_config.dart';
-import 'package:local_notification_awesome/lib/util/external/notifications.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:local_notification_awesome/lib/util/firebase/external/firebase_config.dart';
+import 'package:local_notification_awesome/lib/util/firebase/external/notifications.dart';
 
 
 class HomePage extends StatefulWidget {
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
     AwesomeNotifications().createdStream.listen((notification) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(
-          'Notification Created on ${notification.channelKey}',
+          'Notificação criada ${notification.channelKey}',
         ),
       ));
     });
@@ -81,11 +82,12 @@ class _HomePageState extends State<HomePage> {
                   appBar: AppBar(
                     centerTitle: true,
                     title: const AppBarTitle(),
+                    backgroundColor: Colors.teal[400],
                     actions: [
                       IconButton(
                         onPressed: () {
-                          Modular.to.pushReplacementNamed(
-                              Modular.initialRoute + "page", forRoot: true);
+                          Modular.to.pushNamed(
+                              Modular.initialRoute + "plant", forRoot: true);
                         },
                         icon: const Icon(
                           Icons.insert_chart_outlined_rounded,
